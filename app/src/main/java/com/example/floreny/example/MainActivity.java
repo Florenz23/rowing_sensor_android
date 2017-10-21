@@ -30,6 +30,7 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     private BluetoothAdapter mBluetoothAdapter;
+    public CountDownTimer timer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +39,10 @@ public class MainActivity extends AppCompatActivity {
         connectToBluetooth();
         //startTimer();
         //setText();
-        countDown();
+        timer = countDown();
+        startTimer();
+
+       // timer.cancel();
         addDbListener();
     }
 
@@ -51,8 +55,17 @@ public class MainActivity extends AppCompatActivity {
 //        startActivity(intent);
 //    }
 
-    private void countDown() {
-        new CountDownTimer(30000, 150) {
+    public void startTimer(){
+        timer.start();
+    }
+
+    public void stopTimer(){
+        timer.cancel();
+    }
+
+    private CountDownTimer countDown() {
+        CountDownTimer timer = new CountDownTimer(90000, 1000) {
+        //new CountDownTimer(90000, 150) {
             int counter = 0;
             TextView textView = (TextView) findViewById(R.id.sendDataTextView);
             public void onTick(long millisUntilFinished) {
@@ -66,7 +79,9 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText("done!");
                 sendData("done");
             }
-        }.start();
+        };
+
+        return timer;
 
     }
     public void addDbListener() {
