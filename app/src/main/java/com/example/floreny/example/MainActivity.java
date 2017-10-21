@@ -63,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private CountDownTimer countDown() {
-        CountDownTimer timer = new CountDownTimer(90000, 1000) {
-        //new CountDownTimer(90000, 150) {
+        CountDownTimer timer = new CountDownTimer(90000, 150) {
+       // CountDownTimer timer = new CountDownTimer(90000, 1000) {
             int counter = 0;
             TextView textView = (TextView) findViewById(R.id.sendDataTextView);
             public void onTick(long millisUntilFinished) {
