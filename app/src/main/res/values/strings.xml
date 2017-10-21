@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Example</string>
+    <string name="edit_message">Hi whats up?</string>
+    <string name="button_send">send</string>
+    <string name="sendDataTextView">sendDataTextView</string>
+    <string name="receiveDataTextView">receiveDataTextView</string>
+</resources>
+
+
