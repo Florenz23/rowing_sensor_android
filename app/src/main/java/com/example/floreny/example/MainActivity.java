@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         //startTimer();
         //setText();
         timer = countDown();
-        startTimer();
 
        // timer.cancel();
         addDbListener();
@@ -55,11 +54,11 @@ public class MainActivity extends AppCompatActivity {
 //        startActivity(intent);
 //    }
 
-    public void startTimer(){
+    public void startTimer(View view){
         timer.start();
     }
 
-    public void stopTimer(){
+    public void stopTimer(View view){
         timer.cancel();
     }
 

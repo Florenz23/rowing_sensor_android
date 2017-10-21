@@ -4,6 +4,8 @@
     <string name="button_send">send</string>
     <string name="sendDataTextView">sendDataTextView</string>
     <string name="receiveDataTextView">receiveDataTextView</string>
+    <string name="startButton">start</string>
+    <string name="stopButton">stop</string>
 </resources>
 
 
